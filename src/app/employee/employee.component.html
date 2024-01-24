@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-xs-12">
+        <!-- <h2>The employee's detail</h2> -->
+        <div class="responsive text-center" >
+            <table class="table ">
+                <caption>List of employees </caption>
+                <thead>
+                  <tr>
+                    <th scope="col m-2">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                  </tr>
+                </thead>
+                <tbody >
+                    <!-- <button class="btn btn-transparent"><a href="#pkp" class="btn btn-link btn-danger" [routerLink]="['/employee',employee.id]">{{employee.id}}</a></button> -->
+                    <tr *ngFor="let employee of employees" >
+                        <td scope="row"  [ngStyle]="{backgroundColor: employee.id % 2 === 0 ? '#9c9a9a' : '#faf7f7', color : '#c7c5c5'}"><a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-secondary" 
+                                           href="#"[routerLink]="['/employee',employee.id]"
+                                        >{{employee.id}}
+                                        </a>
+                        </td>
+                        <td  [ngStyle]="{backgroundColor: employee.id % 2 === 0 ? '#9c9a9a' : '#faf7f7', color : '#c7c5c5'}">{{employee.name}}</td>
+                        <td  [ngStyle]="{backgroundColor: employee.id % 2 === 0 ? '#9c9a9a' : '#faf7f7', color : '#c7c5c5'}">{{employee.email}}</td>
+                    </tr>
+                </tbody>
+              </table>
+</div>
+       
+    </div>
+</div>
+<router-outlet></router-outlet>
+<!-- 
+<ul>
+    <li *ngFor="let employee of employees">
+        <a routerLink="/employee-list/{{employee.id}}">{{employee.name}} {{employee.email}}  {{employee.address}} </a>
+    </li>
+</ul> -->
